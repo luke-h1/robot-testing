@@ -31,7 +31,7 @@ fi
 for dir in ./*/
 do cd -P "$dir" || continue
     printf %s\\n "$PWD" >&2
-    sudo rm -rf *.html *.xml *.log && cd "$OLDPWD" ||
+    sudo rm -rf *.html *.xml *.log *.png && cd "$OLDPWD" ||
 ! break; done || ! cd - >&2
 
 echo ""
