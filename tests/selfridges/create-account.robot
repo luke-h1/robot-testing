@@ -9,40 +9,47 @@ Suite Teardown    Run Keywords    Close Browser
 
 
 
-
 *** Variables ***
-${URL}          https://www.selfridges.com/GB/en/
-${BROWSER}      chrome 
-${EMAIL}        randomemail@gmail.com
-${PWD}          supersecretpassword1235^
-${ERROR_STR}    Oops! You've entered an incorrect email address or password. Please try again or get a new password by    clicking on 'Forgotten your password?'. For your security, you will be unable to log on after 12 unsuccessful attempts.  
-
+${URL}        https://www.selfridges.com/GB/en/
+${BROWSER}    chrome 
+${F_NAME}     luke 
+${L_NAME}     howsam 
+${EMAIL}      randomemail@gmail.com
+${PWD}        secretpassword1235^
 
 
 
 *** Test Cases ***
 
+Create an account
+    Open Browser         ${URL}                                                ${BROWSER}
+    Maximize Browser Window
+    sleep                3 
+    Click Link           class:accountnavlink
+    sleep                3                                                     
+    Click Element        //*[@id="myaccountnavInner"]/ul/li/a
+    sleep                3                                                     
+    Click Element        //*[@id="Register"]/button
+    sleep                3 
+    Click Element        //*[@id="dk_container_personTitle"]/a
+    Sleep                3 
+    Click Element        //*[@id="dk_container_personTitle"]/div/ul/li[4]/a
+    Sleep                3                                                     
+    Input Text           //*[@id="firstName"]                                  ${F_NAME}
+    Sleep                1 
+    Input Text           //*[@id="lastName"]                                   ${L_NAME}
+    Sleep                1 
+    Input Text           //*[@id="registerLogonId"]                            ${EMAIL}
+    Sleep                1 
+    Click Element        //*[@id="marketingOptIn"]/div[1]/div[2]/label
+    Sleep                1
+    Input Text           //*[@id="registerLogonPassword"]                      ${PWD} 
+    Sleep                1 
+    Input Text           //*[@id="logonPasswordVerify"]                        ${PWD}
+    Sleep                1 
+    Click Element        //*[@id="Register"]/button
 
 
-Create Account
-    Open Browser           ${URL}                                                     ${BROWSER}
-    sleep                  3 
-    Click Link             class:accountnavlink
-    sleep                  3                                                          
-    Click Element          //*[@id="myaccountnavInner"]/ul/li/a
-    sleep                  3                                                          
-    Input Text             //*[@id="logonId"]                                         ${EMAIL}
-    sleep                  3 
-    Input Text             //*[@id="logonPassword"]                                   ${PWD}
-    sleep                  3 
-    Click Element          //*[@id="sign_in"]/div[2]/div/div/form/fieldset/button 
-    Sleep                  1 
-    Page Should Contain    ${ERROR_STR}
 
 
-
-
-
-
-
-
+    # checkbox yes pls
