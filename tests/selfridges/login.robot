@@ -15,16 +15,23 @@ ${URL}          https://www.selfridges.com/GB/en/
 ${BROWSER}      chrome 
 ${EMAIL}        randomemail@gmail.com
 ${PWD}          supersecretpassword1235^
-${ERROR_STR}    Oops! You've entered an incorrect email address or password. Please try again or get a new password by    clicking on 'Forgotten your password?'. For your security, you will be unable to log on after 12 unsuccessful attempts.  
+${ERROR_STR}    Oops! You've entered an incorrect email address or password. Please try again or get a new password by    clicking on 'Forgotten your password?'. For your security, you will be unable to log on after 12 unsuccessful attempts.    
 
 
 
 
 *** Test Cases ***
+Login
+    Login To Account
 
 
 
-Create Account
+
+
+
+*** Keywords ***
+
+Login To Account
     Open Browser           ${URL}                                                     ${BROWSER}
     sleep                  3 
     Click Link             class:accountnavlink
@@ -38,11 +45,3 @@ Create Account
     Click Element          //*[@id="sign_in"]/div[2]/div/div/form/fieldset/button 
     Sleep                  1 
     Page Should Contain    ${ERROR_STR}
-
-
-
-
-
-
-
-
