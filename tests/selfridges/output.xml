@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.5 on darwin)" generated="20200917 11:29:41.182" rpa="false">
+<suite id="s1" name="Social-Icons" source="/Users/lukehowsam/srv/dev/robot-testing/tests/selfridges/social-icons.robot">
+<kw name="Run Keywords" library="BuiltIn" type="setup">
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" starttime="20200917 11:29:41.398" endtime="20200917 11:29:41.398"></status>
+</kw>
+<test id="s1-t1" name="Click Instagram Icon">
+<kw name="Click Instagram Icon">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20200917 11:29:41.400" level="INFO">Opening browser 'chrome' to base url 'https://www.selfridges.com/GB/en/'.</msg>
+<status status="PASS" starttime="20200917 11:29:41.399" endtime="20200917 11:29:47.062"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20200917 11:29:48.064" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20200917 11:29:47.063" endtime="20200917 11:29:48.065"></status>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<arguments>
+<arg>window.scrollTo(0, 5000)</arg>
+</arguments>
+<msg timestamp="20200917 11:29:48.066" level="INFO">Executing JavaScript:
+window.scrollTo(0, 5000)
+Without any arguments.</msg>
+<status status="PASS" starttime="20200917 11:29:48.065" endtime="20200917 11:29:48.073"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20200917 11:29:53.074" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20200917 11:29:48.073" endtime="20200917 11:29:53.074"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>//*[@id="1507476264"]/div/div[3]/div/ul/li[2]/a</arg>
+</arguments>
+<msg timestamp="20200917 11:29:53.075" level="INFO">Clicking element '//*[@id="1507476264"]/div/div[3]/div/ul/li[2]/a'.</msg>
+<status status="PASS" starttime="20200917 11:29:53.074" endtime="20200917 11:29:53.261"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>3</arg>
+</arguments>
+<msg timestamp="20200917 11:29:56.263" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20200917 11:29:53.261" endtime="20200917 11:29:56.264"></status>
+</kw>
+<kw name="Select Window" library="SeleniumLibrary">
+<doc>DEPRECATED in SeleniumLibrary 4.0. , use `Switch Window` instead.</doc>
+<arguments>
+<arg>locator=NEW</arg>
+</arguments>
+<status status="PASS" starttime="20200917 11:29:56.264" endtime="20200917 11:29:56.279"></status>
+</kw>
+<kw name="Location Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<arguments>
+<arg>https://www.instagram.com/accounts/login/?next=/theofficialselfridges/</arg>
+</arguments>
+<msg timestamp="20200917 11:29:56.286" level="INFO">Current location is 'https://www.instagram.com/accounts/login/?next=/theofficialselfridges/'.</msg>
+<status status="PASS" starttime="20200917 11:29:56.279" endtime="20200917 11:29:56.286"></status>
+</kw>
+<status status="PASS" starttime="20200917 11:29:41.399" endtime="20200917 11:29:56.286"></status>
+</kw>
+<status status="PASS" starttime="20200917 11:29:41.399" endtime="20200917 11:29:56.287" critical="yes"></status>
+</test>
+<kw name="Run Keywords" library="BuiltIn" type="teardown">
+<doc>Executes all the given keywords in a sequence.</doc>
+<arguments>
+<arg>Close Browser</arg>
+</arguments>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20200917 11:29:56.289" endtime="20200917 11:29:56.389"></status>
+</kw>
+<status status="PASS" starttime="20200917 11:29:56.289" endtime="20200917 11:29:56.389"></status>
+</kw>
+<status status="PASS" starttime="20200917 11:29:41.183" endtime="20200917 11:29:56.389"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Social-Icons">Social-Icons</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20200917 11:29:41.397" level="ERROR">Error in file '/Users/lukehowsam/srv/dev/robot-testing/tests/selfridges/social-icons.robot' on line 4: Importing test library 'Selenium2Library' failed: ModuleNotFoundError: No module named 'Selenium2Library'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  /Library/Frameworks/Python.framework/Versions/3.8/bin
+  /Library/Frameworks/Python.framework/Versions/3.8/lib/python38.zip
+  /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8
+  /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/lib-dynload
+  /Users/lukehowsam/Library/Python/3.8/lib/python/site-packages
+  /Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages</msg>
+</errors>
+</robot>
