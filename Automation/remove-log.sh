@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # simple bash script to remove all of robot framework's logging.
-# run inside the dir you want to get rid of the logs
+# run outside the dir you want to get rid of the logs
 # the below will cd into each sub dir and get rid of all xml, html, png & .log files.
 
 
