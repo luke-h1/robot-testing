@@ -1,6 +1,0 @@
-1600439791076	geckodriver	INFO	Listening on 127.0.0.1:55735
-1600439792086	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/h3/n5drm9hs0wl7_hd4nb88_6x40000gn/T/rust_mozprofileLmJF2T"
-[GFX1-]: Receive IPC close with reason=AbnormalShutdown
-Exiting due to channel error.
-[GFX1-]: Receive IPC close with reason=AbnormalShutdown
-Exiting due to channel error.
