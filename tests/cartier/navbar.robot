@@ -12,12 +12,13 @@ Suite Teardown    Run Keywords    Close Browser
 ${SITE_URL}    https://www.cartier.com/
 ${BROWSER}     chrome 
 ${TITLE}       Cartier® Official Website - Jeweler and Watchmaker since 1847
-
+${LENGTH}      item1 item2 item3 item4 item5 item6 item7
+${ITEM}        item
 
 
 # JEWELERY VARS
 # TODO: CLEAN THIS FILE UP
-
+${ITEM}                item 
 ${NAV-JEWEL}           xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/a
 ${NAV-JEWEL--IMG-1}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[1]/a/div[1]/img
 ${NAV-JEWEL--IMG-2}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[2]/a/div[1]/img
@@ -32,13 +33,19 @@ Ensure Jewelery items render properly
     jewellery 
 
 
+stressTest
+    FOR            ${ITEM}      IN    ${LENGTH}    
+    Run Keyword    jewellery
+    END 
+
+
 
 
 *** Keywords ***
 jewellery
     Open Browser                 ${SITE_URL}             ${BROWSER}
-    Title Should Be              ${TITLE}
     Sleep                        5                       
+    Title Should Be              ${TITLE}
     Mouse Over                   ${NAV-JEWEL}
     Sleep                        2
     Page Should Contain          LOVE
