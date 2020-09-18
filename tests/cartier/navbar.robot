@@ -9,7 +9,7 @@ Suite Teardown    Run Keywords    Close Browser
 
 
 *** Variables ***
-${SITE_URL}    https://www.cartier.com/
+${SITE_URL}    https://www.cartier.co.uk/
 ${BROWSER}     chrome 
 ${TITLE}       Cartier® Official Website - Jeweler and Watchmaker since 1847
 ${LENGTH}      item1 item2 item3 item4 item5 item6 item7
@@ -27,6 +27,10 @@ ${NAV-JEWEL--IMG-4}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/d
 ${NAV-JEWEL--IMG-5}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[5]/a/div[1]/img
 ${NAV-JEWEL--IMG-6}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[6]/a/div[1]/img
 
+
+# VIDEO SELECTOR
+${RAMI_MALEK_VIDEO}    //*[@id="video-slideshow-example"]/div/div/video
+
 *** Test Cases ***
 
 Ensure Jewelery items render properly
@@ -38,27 +42,34 @@ stressTest
     Run Keyword    jewellery
     END 
 
-
+Ensure Rami Malek Video Is Visible
+  video
 
 
 *** Keywords ***
-jewellery
-    Open Browser                 ${SITE_URL}             ${BROWSER}
-    Sleep                        5                       
-    Title Should Be              ${TITLE}
-    Mouse Over                   ${NAV-JEWEL}
-    Sleep                        2
-    Page Should Contain          LOVE
-    Page Should Contain          Juste un Clou
-    Page Should Contain          Clash de Cartier
-    Page Should Contain          Trinity
-    Page Should Contain          Panthère de Cartier
-    Page Should Contain          Diamond Collection
-    Page Should Contain Image    ${NAV-JEWEL--IMG-1} 
-    Page Should Contain Image    ${NAV-JEWEL--IMG-2} 
-    Page Should Contain Image    ${NAV-JEWEL--IMG-3} 
-    Page Should Contain Image    ${NAV-JEWEL--IMG-4} 
-    Page Should Contain Image    ${NAV-JEWEL--IMG-5} 
-    Page Should Contain Image    ${NAV-JEWEL--IMG-6} 
+# jewellery
+#     Open Browser                 ${SITE_URL}             ${BROWSER}
+#     Sleep                        5                       
+#     Title Should Be              ${TITLE}
+#     Mouse Over                   ${NAV-JEWEL}
+#     Sleep                        2
+#     Page Should Contain          LOVE
+#     Page Should Contain          Juste un Clou
+#     Page Should Contain          Clash de Cartier
+#     Page Should Contain          Trinity
+#     Page Should Contain          Panthère de Cartier
+#     Page Should Contain          Diamond Collection
+#     Page Should Contain Image    ${NAV-JEWEL--IMG-1} 
+#     Page Should Contain Image    ${NAV-JEWEL--IMG-2} 
+#     Page Should Contain Image    ${NAV-JEWEL--IMG-3} 
+#     Page Should Contain Image    ${NAV-JEWEL--IMG-4} 
+#     Page Should Contain Image    ${NAV-JEWEL--IMG-5} 
+#     Page Should Contain Image    ${NAV-JEWEL--IMG-6} 
+
+
+video
+    Open Browser                 ${SITE_URL}            ${BROWSER}
+    Sleep                        5 
+    Element Should Be Visible    ${RAMI_MALEK_VIDEO}
 
 
