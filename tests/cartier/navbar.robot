@@ -16,10 +16,10 @@ ${TITLE}       Cartier® Official Website - Jeweler and Watchmaker since 1847
 
 
 # JEWELERY VARS
-# TODO: CLEAN THIS FILE UP 
+# TODO: CLEAN THIS FILE UP
 
 ${NAV-JEWEL}           xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/a
-${NAV-JEWEL--IMG-1}    //*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[1]/a/div[1]/img
+${NAV-JEWEL--IMG-1}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[1]/a/div[1]/img
 ${NAV-JEWEL--IMG-2}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[2]/a/div[1]/img
 ${NAV-JEWEL--IMG-3}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[3]/a/div[1]/img
 ${NAV-JEWEL--IMG-4}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[4]/a/div[1]/img

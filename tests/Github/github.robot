@@ -11,8 +11,8 @@ ${URL}        https://www.github.com
 ${BROWSER}    firefox
 ${STR}        GitHub is a development platform inspired by the way you work. From open source to business, you can host and review code, manage projects, and build software alongside 50 million developers.
 ${TITLE}      Built for developers
-
-
+${LOOP}       30 
+${ITEM}       item 
 
 # FORM DOM SELECTORS
 ${USERNAME}    //*[@id="user[login]"]
@@ -28,6 +28,17 @@ ${PASSWORD_VAL}    supersecretpwd123
 
 
 *** Test Cases ***
+
+if-statement-Submit-Form
+    Run Keyword If    ${LOOP} > 1    Submit Form
+
+
+
+
+for-loop-Submit-Form
+    FOR            ${ITEM}        IN    item1    item2    item3    item4    item5 
+    Run Keyword    Submit Form
+    END
 
 Check Text
     validate Text

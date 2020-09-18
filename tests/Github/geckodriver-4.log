@@ -1,0 +1,11 @@
+1600439647818	geckodriver	INFO	Listening on 127.0.0.1:55398
+1600439647831	mozrunner::runner	INFO	Running command: "/Applications/Firefox.app/Contents/MacOS/firefox-bin" "--marionette" "-foreground" "-no-remote" "-profile" "/var/folders/h3/n5drm9hs0wl7_hd4nb88_6x40000gn/T/rust_mozprofilegOrhic"
+console.error: SearchCache: "_readCacheFile: Error reading cache file:" (new Error("", "(unknown module)"))
+1600439649830	Marionette	INFO	Listening on port 55407
+1600439649885	Marionette	WARN	TLS certificate errors will be ignored for this session
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
