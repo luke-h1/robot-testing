@@ -16,10 +16,11 @@ ${URL}        https://www.ebuyer.com/
 
 
 #NAVBAR VARS
-${INPUT}       xpath=/html/body/header/div/form/span/input[2]
-${ACC}         xpath=/html/body/header/div/div[2]/div/a[1] 
-${REDIRECT}    https://accounts.ebuyer.com/customer/account/index.html
-
+${INPUT}              xpath=/html/body/header/div/form/span/input[2]
+${ACC}                xpath=/html/body/header/div/div[2]/div/a[1] 
+${REDIRECT}           https://accounts.ebuyer.com/customer/account/index.html
+${BASKET}             xpath=/html/body/header/div/div[3]/div/a[1]
+${BASKET_REDIRECT}    https://orders.ebuyer.com/customer/shopping/index.html?action=c2hvd2NhcnQ=
 
 
 
@@ -30,6 +31,10 @@ Ensure All Nav Items Are interactable
 
 Click Account
     clickAccount
+
+
+Click Basket
+    clickBasket
 
 *** Keywords ***
 nav-item
@@ -50,3 +55,12 @@ clickAccount
     Location Should Be          ${REDIRECT}
     Close Browser 
 
+
+clickBasket
+    Open Browser                ${URL}                ${BROWSER.firefox}
+    Maximize Browser Window 
+    Sleep                       5 
+    Click Link                  ${BASKET}
+    Sleep                       2
+    Location Should Be          ${BASKET_REDIRECT}
+    Close Browser
