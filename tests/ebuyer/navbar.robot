@@ -16,16 +16,20 @@ ${URL}        https://www.ebuyer.com/
 
 
 #NAVBAR VARS
-${INPUT}    xpath=/html/body/header/div/form/span/input[2]
+${INPUT}       xpath=/html/body/header/div/form/span/input[2]
+${ACC}         xpath=/html/body/header/div/div[2]/div/a[1] 
+${REDIRECT}    https://accounts.ebuyer.com/customer/account/index.html
+
 
 
 
 *** Test Cases ***
-Ensure All Nav Items Are Visible
+Ensure All Nav Items Are interactable
     nav-item
 
 
-
+Click Account
+    clickAccount
 
 *** Keywords ***
 nav-item
@@ -33,3 +37,16 @@ nav-item
     Maximize Browser Window
     Sleep                      5
     Input Text                 ${INPUT}    Hello
+    Sleep                      1
+    Close Browser 
+
+
+clickAccount
+    Open Browser                ${URL}         ${BROWSER.chrome}
+    Maximize Browser Window 
+    Sleep                       5 
+    Click Link                  ${ACC}
+    Sleep                       5
+    Location Should Be          ${REDIRECT}
+    Close Browser 
+
