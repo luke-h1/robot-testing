@@ -13,8 +13,11 @@ Create an account with bad pwd
 
 
 
+create account with bad email
+    bad email 
+
 *** Keywords ***
-bad passsowrd
+bad password
     Open Browser               ${BASE_URL}                 ${BROWSER}
     Maximize Browser Window
     Sleep                      5 
@@ -45,7 +48,7 @@ bad passsowrd
 
 
 
-bad email 
+bad email
     Open Browser               ${BASE_URL}                 ${BROWSER}
     Maximize Browser Window
     Sleep                      5 
@@ -71,5 +74,6 @@ bad email
     sleep                      3
     Execute Javascript         window.scrollTo(0, 800) 
     Sleep                      2 
+    Page Should Contain        ${BAD_EMAIL.errormsg}
     Click Button               ${SUBMIT_BTN}
     Close Browser 

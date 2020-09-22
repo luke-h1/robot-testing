@@ -22,4 +22,6 @@ ${SUBMIT_BTN}          xpath=//*[@id="Register"]/button
 
 
 
-&{BAD_EMAIL}    firstname=john    lastname=bob    email=bob@bob@bob.email&.com    password=Password12345    confirmpassword=Password12345
+&{BAD_EMAIL}    firstname=john    lastname=bob    email=bob@bob@bob.email&.com    password=Password12345    confirmpassword=Password12345  errormsg=Please enter a valid email address
+
+
