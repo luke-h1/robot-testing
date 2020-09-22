@@ -19,3 +19,7 @@ ${CREATE_BTN}          xpath=//*[@id="Register"]/button
 ${SUBMIT_BTN}          xpath=//*[@id="Register"]/button
 # input data
 &{REGISTER_USER}    firstname=bob    lastname=bob    email=johndoe@email.com    password=password123    confirmpassword=password123
+
+
+
+&{BAD_EMAIL}    firstname=john    lastname=bob    email=bob@bob@bob.email&.com    password=Password12345    confirmpassword=Password12345
