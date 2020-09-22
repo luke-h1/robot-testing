@@ -1,0 +1,24 @@
+trigger: 
+  - main 
+  
+  jobs: 
+  - job: 'Testing'
+    pool: 
+      vmImage: 'vs2017-win2016'
+    strategy:
+      matrix: 
+        Python37:
+          python.version: "3.7"
+      maxParallel: 1
+    
+    steps:
+      - task: UsePythonVersion@0
+        inputs: 
+         versionSpec: '3.7'
+         architecture: 'x64'
+         
+         
+      - script: pip install robotframework robotframework-seleniumlibrary && npm install chromedriver && npm install geckodriver
+        displayName: "Install Dependencies"
+      - powershell:  robot --pythonpath "." YOUR_TEST_FILE.robot 
+        displayName: "run Robot test cases"
