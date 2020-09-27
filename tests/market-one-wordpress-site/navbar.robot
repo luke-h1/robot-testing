@@ -27,6 +27,7 @@ About us link should redirect to about page firefox
     Click Link                 ${ABOUT_US}
     Sleep                      3
     Location Should Be         https://www.marketone.dev.cc/about-us/
+    Close Browser
 
 
 About us link should redirect to about page chrome
@@ -36,6 +37,7 @@ About us link should redirect to about page chrome
     Click Link                 ${ABOUT_US}
     Sleep                      3
     Location Should Be         https://www.marketone.dev.cc/about-us/
+    Close Browser
 
 
 Services page should redirect to services page firefox
@@ -45,6 +47,7 @@ Services page should redirect to services page firefox
     Click Link                 ${SERVICES}
     Sleep                      3
     Location Should Be         https://www.marketone.dev.cc/services/
+    Close Browser
 
 
 Services page should redirect to services page chrome
@@ -54,6 +57,7 @@ Services page should redirect to services page chrome
     Click Link                 ${SERVICES}
     Sleep                      3
     Location Should Be         https://www.marketone.dev.cc/services/
+    Close Browser
 
 
 
@@ -65,6 +69,7 @@ blog page should redirect to blog page firefox
     Click Link                 ${BLOG}
     Sleep                      3
     Location Should Be         https://www.marketone.dev.cc/blog/
+    Close Browser
 
 
 blog page should redirect to blog page chrome
@@ -74,6 +79,7 @@ blog page should redirect to blog page chrome
     Click Link                 ${BLOG}
     Sleep                      3
     Location Should Be         https://www.marketone.dev.cc/blog/
+    Close Browser
 
 
 
@@ -84,6 +90,7 @@ contact page should redirect to contact page firefox
     Click Link                 ${CONTACT}
     Sleep                      3
     Location Should Be         https://www.marketone.dev.cc/contact-us/
+    Close Browser
 
 
 blog page should redirect to blog page chrome
@@ -93,4 +100,5 @@ blog page should redirect to blog page chrome
     Click Link                 ${CONTACT}
     Sleep                      3
     Location Should Be         https://www.marketone.dev.cc/contact-us/
+    Close Browser
 
