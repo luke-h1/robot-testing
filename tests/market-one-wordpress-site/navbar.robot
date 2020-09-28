@@ -123,4 +123,4 @@ page should contain team member images
     Page Should Contain Image   xpath=//*[@id="team"]/div/div/div[2]/div[2]/div/div[1]/img
     Page Should Contain Image   xpath=//*[@id="team"]/div/div/div[2]/div[3]/div/div[1]/img 
     Sleep                       1 
-    Close Browser 
+    Close Browser
