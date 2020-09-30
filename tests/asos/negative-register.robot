@@ -35,6 +35,10 @@ blank password register
     negative password
 
 
+blank email register
+    negative email
+
+
 
 
 *** Keywords ***
@@ -65,3 +69,33 @@ negative password
     Double Click Element         ${DISCOUNT}
     Sleep                        2 
     Click Element                //*[@id="register"]
+    Close Browser
+
+negative email
+    Open Browser                 ${URL}                                                     ${BROWSER.chrome}
+    Maximize Browser Window 
+    Sleep                        5
+    Mouse Over                   ${NEW_TO_ASOS} 
+    Sleep                        1 
+    Click Link                   //*[@id="myaccount-dropdown"]/div/div/div/div/span/a[2]
+    Sleep                        2 
+    Input Text                   ${PASSWORD}                                                password1234 
+    Input Text                   ${FIRST_NAME}                                              john 
+    Input Text                   ${LAST_NAME}                                               doe 
+    Execute Javascript           window.scroll(0,700)
+    Sleep                        3 
+    Select From List By Index    ${CHECKBOX_DAY}                                            5 
+    Select From List By Index    ${CHECKBOX_MONTH}                                          6 
+    Select From List By Value    ${CHECKBOX_YEAR}                                           1999
+    Sleep                        1 
+    Double Click Element         ${GET_OUT_OF_YEAR_MENU}
+    Execute Javascript           window.scroll(0,1000)
+    Sleep                        3
+    Double Click Element         ${CHECK_MENSWEAR}
+    Execute Javascript           window.scroll(0,1000)
+    Sleep                        2 
+    Double Click Element         ${PREF_ALL}
+    Double Click Element         ${DISCOUNT}
+    Sleep                        2 
+    Click Element                //*[@id="register"]
+    Close Browser
