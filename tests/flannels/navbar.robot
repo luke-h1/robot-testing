@@ -33,6 +33,12 @@ nav items should redirect to correct page
     redirect
 
 
+sign in should redirect to sign in page
+    click signin
+
+user should be able to type in search box
+    type
+
 *** Keywords ***
 hover
     Open Browser    ${SITE_URL}         ${BROWSER.chrome} 
@@ -102,3 +108,21 @@ redirect
     Sleep                      3 
     Location Should Be         https://www.flannels.com/clearancehome
     Close Browser              
+
+click signin
+    Open browser               ${SITE_URL}                                                    ${BROWSER.chrome}    
+    Maximize Browser Window
+    Sleep                      1
+    Click Element              xpath=//*[@id="divSignIn"]
+    Sleep                      3 
+    Location Should Be         https://www.flannels.com/login?returnurl=%2fpages%2fmenhome
+
+type
+    Open browser               ${SITE_URL}                   ${BROWSER.chrome}    
+    Maximize Browser Window
+    Sleep                      1
+    Click Element              xpath=//*[@id="txtSearch"]
+    Sleep                      1 
+    Input Text                 xpath=//*[@id="txtSearch"]    blahblahblah
+    Sleep                      1 
+    Close Browser
