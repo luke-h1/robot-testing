@@ -28,32 +28,55 @@ ${OFFERS}            xpath=//*[@id="Registration_IsSubscriber"]
 
 
 *** Test Cases ***
-postive register
-    register-all-fields
+# postive register
+#     register-all-fields
 
-
+negative register(no-pwd)
+    no-password-register
 
 *** Keywords ***
-register-all-fields
-    Open Browser                 ${SITE_URL}                 ${BROWSER}
+# register-all-fields
+#     Open Browser                 ${SITE_URL}                 ${BROWSER}
+#     Maximize Browser Window 
+#     Sleep                        1 
+#     Click Element                ${SIGN_IN_BTN} 
+#     Sleep                        1
+#     Click Link                   ${SIGN_UP_BTN}
+#     Sleep                        1 
+#     Input Text                   ${FIRST_NAME}               John                 
+#     Input Text                   ${LAST_NAME}                Doe
+#     Input Text                   ${EMAIL}                    johndoe@gmail.com
+#     Select From List By Index    ${CHECKBOX_DAY}             5
+#     Select From List By Index    ${CHECKBOX_MONTH}           6 
+#     Select From List By Value    ${CHECKBOX_YEAR}            1999
+#     Input Text                   ${PWD}                      password1
+#     Input Text                   ${PWD_CONFIRM}              password1 
+#     Execute Javascript           window.scrollTo(0, 2000)    
+#     Sleep                        2
+#     Select Checkbox              ${OFFERS}
+#     Click Link                   ${REGISTER_BTN}
+#     Close Browser 
+
+
+no-password-register
+    Open Browser                 ${SITE_URL}          ${BROWSER}
     Maximize Browser Window 
     Sleep                        1 
     Click Element                ${SIGN_IN_BTN} 
     Sleep                        1
     Click Link                   ${SIGN_UP_BTN}
     Sleep                        1 
-    Input Text                   ${FIRST_NAME}               John                 
-    Input Text                   ${LAST_NAME}                Doe
-    Input Text                   ${EMAIL}                    johndoe@gmail.com
-    Select From List By Index    ${CHECKBOX_DAY}             5
-    Select From List By Index    ${CHECKBOX_MONTH}           6 
-    Select From List By Value    ${CHECKBOX_YEAR}            1999
-    Input Text                   ${PWD}                      password1
-    Input Text                   ${PWD_CONFIRM}              password1 
+    Input Text                   ${FIRST_NAME}        John                 
+    Input Text                   ${LAST_NAME}         Doe
+    Input Text                   ${EMAIL}             johndoe@gmail.com
+    Select From List By Index    ${CHECKBOX_DAY}      5
+    Select From List By Index    ${CHECKBOX_MONTH}    6 
+    Select From List By Value    ${CHECKBOX_YEAR}     1999
     Execute Javascript           window.scrollTo(0, 2000)    
     Sleep                        2
     Select Checkbox              ${OFFERS}
     Click Link                   ${REGISTER_BTN}
+    Sleep                        6 
     Close Browser 
 
 
