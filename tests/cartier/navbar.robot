@@ -1,7 +1,7 @@
 *** Settings ***
-Library    OperatingSystem
-Library    SeleniumLibrary
-
+Library     OperatingSystem
+Library     SeleniumLibrary
+Resource    ./navbar-resources.robot 
 
 Suite Setup       Run Keywords
 Suite Teardown    Run Keywords    Close Browser
@@ -9,57 +9,35 @@ Suite Teardown    Run Keywords    Close Browser
 
 
 *** Variables ***
-${SITE_URL}    https://www.cartier.co.uk/
-${BROWSER}     chrome 
-${TITLE}       Cartier® Official Website - Jeweler and Watchmaker since 1847
-${LENGTH}      item1 item2 item3 item4 item5 item6 item7
-${ITEM}        item
 
-# JEWELERY VARS
-# TODO: CLEAN THIS FILE UP
-${ITEM}                item 
-${NAV-JEWEL}           xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/a
-${NAV-JEWEL--IMG-1}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[1]/a/div[1]/img
-${NAV-JEWEL--IMG-2}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[2]/a/div[1]/img
-${NAV-JEWEL--IMG-3}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[3]/a/div[1]/img
-${NAV-JEWEL--IMG-4}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[4]/a/div[1]/img
-${NAV-JEWEL--IMG-5}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[5]/a/div[1]/img
-${NAV-JEWEL--IMG-6}    xpath=//*[@id="fl-header"]/div/div[3]/div[1]/nav/div[2]/div/ul/li[1]/div[2]/div/div/div/div[3]/div[1]/div[2]/div/div/div[6]/a/div[1]/img
 
 
 
 *** Test Cases ***
-
-Ensure Jewelery items render properly
-    jewellery 
-
-
-stressTest
-    FOR            ${ITEM}      IN    ${LENGTH}    
-    Run Keyword    jewellery
-    END 
-
+hover over nav-items
+    hover over nav-items keyword
 
 
 
 *** Keywords ***
-jewellery
-    Open Browser                 ${SITE_URL}             ${BROWSER}
-    Sleep                        5                       
-    Title Should Be              ${TITLE}
-    Mouse Over                   ${NAV-JEWEL}
-    Sleep                        2
-    Page Should Contain          LOVE
-    Page Should Contain          Juste un Clou
-    Page Should Contain          Clash de Cartier
-    Page Should Contain          Trinity
-    Page Should Contain          Panthère de Cartier
-    Page Should Contain          Diamond Collection
-    Page Should Contain Image    ${NAV-JEWEL--IMG-1} 
-    Page Should Contain Image    ${NAV-JEWEL--IMG-2} 
-    Page Should Contain Image    ${NAV-JEWEL--IMG-3} 
-    Page Should Contain Image    ${NAV-JEWEL--IMG-4} 
-    Page Should Contain Image    ${NAV-JEWEL--IMG-5} 
-    Page Should Contain Image    ${NAV-JEWEL--IMG-6} 
-
-
+hover over nav-items keyword
+    Open Browser    ${SITE_URL}              ${BROWSER}
+    Sleep           1 
+    Mouse Over      ${JEWELRY_ITEM}
+    Sleep           0.5 
+    Mouse Over      ${WATCHES_ITEM}
+    Sleep           0.5
+    Mouse Over      ${ENGAGEMENT_ITEM}
+    Sleep           0.5
+    Mouse Over      ${LEATHER-GOODS_ITEM}
+    Sleep           0.5
+    Mouse Over      ${FRAGRANCES_ITEM}
+    Sleep           0.5
+    Mouse Over      ${GIFTS_ITEM}
+    Sleep           0.5
+    Mouse Over      ${SERVICES_ITEM}
+    Sleep           0.5
+    Mouse Over      ${MAISON_ITEM}
+    Sleep           0.5
+    Mouse Over      ${NEWS_ITEM}
+    Close Browser 
