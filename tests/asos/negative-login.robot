@@ -10,8 +10,8 @@ Suite Teardown    Run Keywords    Close Browser
 *** Variables ***
 ${URL}              https://www.asos.com/men/
 &{BROWSER}          firefox=firefox                                                  chrome=chrome
-${DROPDOWN}         xpath=//*[@id="myAccountDropdown"]/button
-${SIGN_IN}          xpath=//*[@id="myaccount-dropdown"]/div/div/div/div/span/a[1]
+${DROPDOWN}         xpath=//*[@id="myAccountDropdown"]
+${SIGN_IN}          xpath=//*[@id="myaccount-dropdown"]
 ${EMAIL}            xpath=//*[@id="EmailAddress"]
 ${SUBMIT_BTN}       xpath=//*[@id="signin"]
 ${PWD_ERROR_STR}    xpath=Hey, we need a password here
