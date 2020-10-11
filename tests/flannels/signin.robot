@@ -7,7 +7,7 @@ Suite Teardown    Run Keywords     Close Browser
 *** Variables ***
 ${SITE_URL}       https://www.flannels.com/men 
 ${BROWSER}        chrome
-${SIGN_IN_BTN}    xpath=//*[@id="dnn_ctl01_dnnLOGIN_loginLink"]/span[2]
+${SIGN_IN_BTN}    xpath=//*[@id="dnn_ctl01_dnnLOGIN_loginLink"]
 
 # Sign in / Sign up fields
 ${EMAIL_FIELD}    xpath=//*[@id="Login_EmailAddress"]

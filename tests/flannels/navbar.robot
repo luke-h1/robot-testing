@@ -14,7 +14,7 @@ ${SITE_URL}    https://www.flannels.com/men
 
 
 # navbar items
-${CURRENCY_ITEM}    xpath=//*[@id="currencyLanguageSelector"]/div
+${CURRENCY_ITEM}    xpath=//*[@class="spanCurrencyLanguageSelector"]
 ${ITEM_1}           xpath=//*[@id="lnkTopLevelMenu_1377962"] 
 ${ITEM_2}           xpath=//*[@id="lnkTopLevelMenu_1377969"] 
 ${ITEM_3}           xpath=//*[@id="lnkTopLevelMenu_1378023"]

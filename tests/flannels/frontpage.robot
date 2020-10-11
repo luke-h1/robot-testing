@@ -12,7 +12,7 @@ ${BROWSER}     chrome
 
 
 # scroll button
-${SCROLL_BTN}    xpath=//*[@id="mp-pusher"]/div[2]/div/div[4]/section/a 
+${SCROLL_BTN}    xpath=//*[@class="back-to-top"]
 
 
 
